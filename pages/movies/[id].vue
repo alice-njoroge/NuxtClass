@@ -1,14 +1,20 @@
-<script setup >
+<script setup>
+import {useAsyncData} from "#app";
 
 const route = useRoute();
+const {data} = await useAsyncData(
+    `/movies/${route.params.id}`,
+    () => {
+      return $fetch(`http://www.omdbapi.com/?apikey=8e3f600b&i=${route.params.id}`);
+    }
+);
 
 
 </script>
 
 <template>
-<h1> {{route.params.id}} </h1>
+  <pre> {{ data }} </pre>
 </template>
-
 <style scoped>
 
 </style>
