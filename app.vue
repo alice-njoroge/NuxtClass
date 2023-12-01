@@ -1,14 +1,15 @@
 <script>
 useHead({
-  title: "My Movie App"
-
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} - Site Title` : 'Site Title';
+  }
 })
 </script>
 <template>
   <div>
-    <nav >
-      <NuxtLink to="/" >Home</NuxtLink>
-      <NuxtLink to="/movies" >Movies</NuxtLink>
+    <nav>
+      <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/movies">Movies</NuxtLink>
     </nav>
     <NuxtPage/>
   </div>
