@@ -1,8 +1,10 @@
 <script setup>
 const query = ref("batman");
 const movies = ref([]);
+const runtimeConfig = useRuntimeConfig()
 const searchMovie = async () => {
-  const {Search} = await $fetch(`http://www.omdbapi.com/?i=tt3896198&apikey=2ade9ed6&s=${query.value}`);
+  console.log(runtimeConfig.public.baseURL)
+  const {Search} = await $fetch(`${runtimeConfig.public.baseURL}?i=tt3896198&apikey=2ade9ed6&s=${query.value}`);
   movies.value = Search
 }
 searchMovie();

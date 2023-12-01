@@ -1,17 +1,19 @@
 <script setup>
-import {useAsyncData, useFetch} from "#app";
+import {useFetch} from "#app";
 
 const route = useRoute();
-const {data, error} = await useFetch(
-    `http://www.omdbapi.com/?apikey=8e3f600b&i=${route.params.id}`,
+const runtimeConfig = useRuntimeConfig();
+const {data} = await useFetch(
+    `${runtimeConfig.public.baseURL}?apikey=8e3f600b&i=${route.params.id}`,
     {
       pick: ["Plot", "Title", "Error"],
       key: `/movies/${route.params.id}`,
     }
-)
+);
 if (data.value.Error) {
   showError({statusCode: 404, statusMessage: data.value.Error})
 }
+
 </script>
 
 <template>
