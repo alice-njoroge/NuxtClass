@@ -1,3 +1,9 @@
+<script>
+useHead({
+  title: "My Movie App"
+
+})
+</script>
 <template>
   <div>
     <nav >
@@ -14,6 +20,4 @@ nav {
   justify-content: space-between;
   margin: 1em;
 }
-
-
 </style>
