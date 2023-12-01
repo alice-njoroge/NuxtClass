@@ -13,6 +13,9 @@ const {data} = await useFetch(
 if (data.value.Error) {
   showError({statusCode: 404, statusMessage: data.value.Error})
 }
+useHead({
+  title: data.value.Title
+})
 
 </script>
 
