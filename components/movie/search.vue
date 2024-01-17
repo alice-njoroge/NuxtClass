@@ -3,8 +3,8 @@ const query = ref("batman");
 const movies = ref([]);
 const runtimeConfig = useRuntimeConfig()
 const searchMovie = async () => {
-  console.log(runtimeConfig.public.baseURL)
-  const {Search} = await $fetch(`${runtimeConfig.public.baseURL}?i=tt3896198&apikey=2ade9ed6&s=${query.value}`);
+  const {Search} = await $fetch(`${runtimeConfig.public.baseURL}?i=tt3896198&apikey=${runtimeConfig.public.apiKey}&s=${query.value}`);
+  console.log(Search)
   movies.value = Search
 }
 searchMovie();

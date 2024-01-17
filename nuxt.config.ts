@@ -3,7 +3,8 @@ export default defineNuxtConfig({
     devtools: {enabled: true},
     runtimeConfig: {
         public: {
-            baseURL: 'http://www.omdbapi.com/'
+            baseURL: 'http://www.omdbapi.com/',
+            apiKey: process.env.IMDB_API_KEY
         }
     }
 })
