@@ -1,11 +1,9 @@
 <template>
-<div>
   <nav>
     <NuxtLink to="/">Home</NuxtLink>
     <NuxtLink to="/movies">Movies</NuxtLink>
   </nav>
-  <Slot></Slot>
-</div>
+  <slot></slot>
 </template>
 <script setup lang="ts">
 </script>
