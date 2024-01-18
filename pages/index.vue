@@ -1,10 +1,5 @@
 <script lang="ts" setup>
 
-definePageMeta({
-  middleware(to, from) {
-    console.log(to, from)
-  }
-})
 </script>
 
 <template>
